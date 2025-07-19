@@ -27,8 +27,9 @@ interface LoginRequest {
   password: string;
 }
 
-interface User {
+export interface User {
   name: string;
+  userId?: string;
 }
 const baseApiUrl = import.meta.env.VITE_API_URL;
 
@@ -55,8 +56,8 @@ export const authApi = createApi({
       transformResponse: (response: { response: LoginResponse }) =>
         response.response,
     }),
-    profile: builder.query<User, void>({
-      query: () => "/user/profile",
+    profile: builder.query<User, string>({
+      query: (userId) => `${endPoints.GET_PROFILE}/${userId}`,
       transformResponse: (response: { response: User }) => response.response,
     }),
   }),

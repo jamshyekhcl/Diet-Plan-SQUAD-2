@@ -3,12 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import { sidebarRouteList } from "../../utils/sidebarItems";
 import { roles } from "../../interface/role";
 
-const user: { token: string; role: roles; name: string } = JSON.parse(
-  localStorage.getItem("user") || "null"
-);
-
 const Sidebar: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
   const location = useLocation();
+
+  const user: { token: string; role: roles; name: string } = JSON.parse(
+    localStorage.getItem("user") || "null"
+  );
 
   return (
     <div

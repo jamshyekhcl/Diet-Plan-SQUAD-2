@@ -2,6 +2,8 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import { lazy } from "react";
 import ProtectedRoute from "../components/ProtectedRoute";
 import MainLayout from "../components/Layout/MainLayout";
+import MyProfile from "../pages/MyProfile";
+import DietPlan from "../pages/DietPlan";
 
 // Lazy-loaded pages
 const Login = lazy(() => import("../pages/Login"));
@@ -24,7 +26,9 @@ const router = createBrowserRouter([
       {
         element: <MainLayout />,
         children: [
-          { path: "/", element: <Dashboard /> },
+          { path: "/", element: <BmiCalculator /> },
+          { path: "/myprofile", element: <MyProfile /> },
+          { path: "/dietplan", element: <DietPlan /> },
           { path: "/test", element: <Test /> },
         ],
       },

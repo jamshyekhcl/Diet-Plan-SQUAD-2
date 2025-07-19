@@ -57,6 +57,7 @@ export const loginUser = async (req: Request, res: Response) => {
   }
 };
 
+
 export const getAllUsers = async (req: Request, res: Response) => {
   try {
     const queryParams: TGetAllQueryParams = req.query as TGetAllQueryParams;

@@ -9,7 +9,21 @@ export const sidebarRouteList: Record<roles, ISidebarRoute[]> = {
     },
     { name: "Test", link: "/test" },
   ],
-  user: [],
+  user: [
+    {
+      name: "BMI Calculator",
+      link: "/",
+    },
+    {
+      name: "My Profile",
+      link: "/myprofile",
+    },
+    {
+      name: "My Diet Plan",
+      link: "/dietplan",
+    },
+    // { name: "Test", link: "/test" },
+  ],
   guest: [
     {
       name: "Dashboard",
