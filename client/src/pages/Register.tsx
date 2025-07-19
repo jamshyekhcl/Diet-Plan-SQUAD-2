@@ -4,6 +4,7 @@ import { useRegisterMutation } from "../redux/services/authApi";
 import FormInput from "../components/FormFields/FormInput";
 import { Link } from "react-router-dom";
 import { RegisterValidationSchema } from "../validators/validators";
+import FormRadioGroup from "../components/FormFields/FormRadioGroup";
 
 const Register = () => {
   const [registerUser, { isLoading }] = useRegisterMutation();
@@ -24,7 +25,13 @@ const Register = () => {
         <h2 className='text-2xl font-bold text-center mb-6'>Create Account</h2>
         <Formik
           validationSchema={RegisterValidationSchema}
-          initialValues={{ name: "", email: "", password: "" }}
+          initialValues={{
+            name: "",
+            email: "",
+            password: "",
+            age: "",
+            gender: "male",
+          }}
           onSubmit={handleSubmit}>
           {({ handleChange, values }) => (
             <Form>
@@ -45,6 +52,24 @@ const Register = () => {
                 onChange={handleChange}
                 type='email'
                 value={values.email}
+              />
+              <FormInput
+                name='age'
+                labelName='Age'
+                placeHolder='Enter your age'
+                data-testid='ageInput'
+                onChange={handleChange}
+                type='number'
+                value={values.age}
+              />
+              <FormRadioGroup
+                name='gender'
+                label='Gender'
+                options={[
+                  { label: "Male", value: "male" },
+                  { label: "Female", value: "female" },
+                  { label: "Others", value: "others" },
+                ]}
               />
               <FormInput
                 name='password'
