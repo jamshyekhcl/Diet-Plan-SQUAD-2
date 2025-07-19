@@ -5,6 +5,7 @@ import FormInput from "../components/FormFields/FormInput";
 import { Link } from "react-router-dom";
 import { RegisterValidationSchema } from "../validators/validators";
 import FormRadioGroup from "../components/FormFields/FormRadioGroup";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [registerUser, { isLoading }] = useRegisterMutation();
@@ -12,10 +13,10 @@ const Register = () => {
   const handleSubmit = async (values: ILogin & { name: string }) => {
     try {
       await registerUser(values).unwrap();
-      alert("Registered successfully!");
+      toast.success("Registered successfully!");
     } catch (error) {
       console.error("Registration error:", error);
-      alert("Registration failed");
+      toast.success("Registration failed!");
     }
   };
 
