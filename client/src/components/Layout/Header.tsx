@@ -5,7 +5,7 @@ import { sidebarRouteList } from "../../utils/sidebarItems";
 import { roles } from "../../interface/role";
 import { useProfileQuery } from "../../redux/services/authApi";
 
-const user: { token: string; role: roles } = JSON.parse(
+const user: { token: string; role: roles; userId: string } = JSON.parse(
   localStorage.getItem("user") || "null"
 );
 
@@ -25,7 +25,7 @@ const user: { token: string; role: roles } = JSON.parse(
 // };
 
 const Header: React.FC = () => {
-  const { data } = useProfileQuery();
+  const { data } = useProfileQuery(user.userId);
   const { pathname } = useLocation();
   let titleName: string | undefined = "";
   if (user?.role) {
