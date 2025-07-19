@@ -18,12 +18,12 @@ export const registerValidator = [
     .isLength({ min: 6 })
     .withMessage("Password must be at least 6 characters"),
 
-  body("role")
-    .notEmpty()
-    .withMessage("Role is required")
-    .isIn(["admin", "user"])
-    .withMessage("Invalid role"),
-  validatorFn,
+  // body("role")
+  //   .notEmpty()
+  //   .withMessage("Role is required")
+  //   .isIn(["admin", "user"])
+  //   .withMessage("Invalid role"),
+  // validatorFn,
 ];
 
 export const loginValidator = [

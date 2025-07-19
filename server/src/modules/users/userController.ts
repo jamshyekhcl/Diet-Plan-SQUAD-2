@@ -19,7 +19,7 @@ export const registerUser = async (req: Request, res: Response) => {
       password: body.password,
       age : body.age,
       gender : body.gender,
-      role: body.role,
+      // role: body.role,
       phone: body.phone,
     };
     const user = await userService.registerUser(createUserBody);

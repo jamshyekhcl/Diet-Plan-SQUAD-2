@@ -20,6 +20,7 @@ const userSchema = new Schema<IUser>(
       type: String,
       enum: ["admin", "user"],
       required: true,
+      default: "user",
     },
     gender: {
       type: String,

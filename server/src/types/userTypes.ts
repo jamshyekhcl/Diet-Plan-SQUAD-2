@@ -11,7 +11,7 @@ export type TCreateUserBody = {
   password: string;
   gender: TGender;
   age: number;
-  role: TRoles;
+  // role: TRoles;
   phone: string;
 };
 

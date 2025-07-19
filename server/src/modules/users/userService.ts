@@ -6,7 +6,7 @@ import { generateJWT } from "../../utils/authFunction";
 import { TGetAllQueryParams } from "../../types";
 
 export const registerUser = async (createBody: TCreateUserBody) => {
-  const { name, email, password, phone, role, age, gender } = createBody;
+  const { name, email, password, phone, age, gender } = createBody;
   const existing = await userModel.findOne({ email });
   if (existing) throw new Error("User already exists");
   const passwordHash = await bcrypt.hash(password, 10);
@@ -16,7 +16,7 @@ export const registerUser = async (createBody: TCreateUserBody) => {
     passwordHash,
     gender,
     age,
-    role,
+    // role,
     phone,
   });
 
