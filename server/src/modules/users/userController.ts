@@ -10,12 +10,15 @@ import messages from "./userMessage";
 import { TGetAllQueryParams } from "../../types";
 
 export const registerUser = async (req: Request, res: Response) => {
+  
   try {
     const body: TUser = req.body;
     const createUserBody: TCreateUserBody = {
       name: body.name,
       email: body.email,
       password: body.password,
+      age : body.age,
+      gender : body.gender,
       role: body.role,
       phone: body.phone,
     };

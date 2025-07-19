@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import { IUser } from "../interfaces/userInterface";
+import { TGender } from "../types/userTypes";
 
 export type roles = "admin" | "user";
 
@@ -18,6 +19,15 @@ const userSchema = new Schema<IUser>(
     role: {
       type: String,
       enum: ["admin", "user"],
+      required: true,
+    },
+    gender: {
+      type: String,
+      enum: TGender,
+      required: true,
+    },
+    age: {
+      type: Number,
       required: true,
     },
     status: {

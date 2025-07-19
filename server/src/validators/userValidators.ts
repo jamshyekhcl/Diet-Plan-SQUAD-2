@@ -8,6 +8,10 @@ export const registerValidator = [
     .isLength({ min: 2 })
     .withMessage("Name must be at least 2 characters"),
 
+  body("age").notEmpty().withMessage("Age is required"),
+
+  body("gender").notEmpty().withMessage("Name is required"),
+
   body("email").isEmail().withMessage("A valid email is required"),
 
   body("password")

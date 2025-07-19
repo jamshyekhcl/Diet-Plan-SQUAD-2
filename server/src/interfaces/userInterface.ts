@@ -1,4 +1,4 @@
-import { TRoles } from "../types/userTypes";
+import { TGender, TRoles } from "../types/userTypes";
 
 export interface IUser {
   _id?: string;
@@ -6,6 +6,8 @@ export interface IUser {
   email: string;
   passwordHash: string;
   role: TRoles;
+  age: number;
+  gender: TGender;
   phone: string;
   status: string;
 }
